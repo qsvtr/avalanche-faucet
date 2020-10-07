@@ -1,7 +1,6 @@
 const avalanche = require("avalanche");
 const BN = require('bn.js');
 
-
 const AVA_IP = process.env.AVA_IP || "localhost";
 const AVA_PORT = process.env.AVA_PORT || 9650;
 const AVA_PROTOCOL = process.env.AVA_PROTOCOL || "https";
@@ -15,6 +14,9 @@ const ASSET_ID = process.env.ASSET_ID; // Which asset is being sent from the fau
 const DROP_SIZE =  process.env.DROP_SIZE_X || 100; // how much of the given asset to transfer from the faucet
 const AVAX_FEE =  process.env.AVAX_FEE || 0; // how much of the given asset to transfer from the faucet
 const CAPTCHA_SECRET = process.env.CAPTCHA_SECRET;
+const NFT_ID = process.env.NFT_ID
+const ASSET_NAME = process.env.ASSET_NAME
+const URL_IMG = process.env.URL_IMG
 
 let bintools = avalanche.BinTools.getInstance();
 
@@ -50,7 +52,10 @@ const CONFIG = {
     ASSET_ID: ASSET_ID,
     DROP_SIZE: DROP_SIZE,
     FAUCET_ADDRESS: FAUCET_ADDRESS,
-    CAPTCHA_SECRET: CAPTCHA_SECRET
+    CAPTCHA_SECRET: CAPTCHA_SECRET,
+    NFT_ID: NFT_ID,
+    ASSET_NAME: ASSET_NAME,
+    URL_IMG: URL_IMG
 };
 
 console.log(CONFIG);
@@ -85,6 +90,6 @@ module.exports = {
     ava,
     avm,
     bintools,
-    CONFIG
+    CONFIG,
 };
 
